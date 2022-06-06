@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+            {% for food in foods %}
+                <div class="food">
+                    <div class="date">
+                        <p>Published: {{ food.published_date }}</p>
+                    </div>
+                    <h2><a href="">{{ food.food_name }}</a></h2>
+                    <p>{{ food.ingredients|linebreaksbr }}</p>
+                    <p>Price : {{ food.price|linebreaksbr }}$</p>
+                </div>
+            {% endfor %}
+{% endblock %}
